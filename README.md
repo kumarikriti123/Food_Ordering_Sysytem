@@ -3,7 +3,9 @@ Food Ordering System
 
 MODEL
 1.   USER
-// atributes   
+   
+// atributes 
+
  String id
  String userName
  String password
@@ -11,12 +13,15 @@ MODEL
  String role
 
 // constructor
+
    User(userName,email,password,role)
 
 //getter & setter
 
 2. Restaurant
+   
 // atributes
+
  String id
  String name
  String address
@@ -25,12 +30,15 @@ MODEL
  ArrayList <FoodItems>
 
  //constructor
+ 
    Restaurant(ownerId,name,address,phone)
 
 // getter & setter
 
 3. FoodItems
+   
 // atributes
+
    String id
    String restaurantId
    String name
@@ -39,12 +47,15 @@ MODEL
    boolean availability
 
 //constructor
+
   FoodItems(restaurantId,price,name,description)
 
 //getter & setter
 
 4.Order
+
 //atributes
+  
   String id
   String customerId
   String restaurantId
@@ -53,13 +64,15 @@ MODEL
   ArrayList <FoodItems> 
 
 //constructor
+  
   Order(customerId,restaurantId,ArrayList<FoodItems>)
 
 //getter & setter
 
 REPOSITORY
 1. UserRepository
-      ArrayList <User> userList = new ArrayList<>()
+
+   ArrayList <User> userList = new ArrayList<>()
    
     String save (User user)
    // Add user to user list
@@ -74,6 +87,7 @@ REPOSITORY
    // It will search for the userId of user and returns user
 
 2. RestaurantRepository
+   
    ArrayList <Restaurant> resturantList = new ArrayList<>()
    
     boolean saveRestaurant (Restaurant restaurant)
@@ -89,6 +103,7 @@ REPOSITORY
   //It will remove restaurant from the list	
 
 3. FoodItemRepository
+   
    ArrayList<FoodItems> foodItemList = new ArrayList<>()
 
     boolean saveItem (FoodItems foodItems)
@@ -104,6 +119,7 @@ REPOSITORY
   //It will remove the foodItem form list
 
 4. OrderRepository
+   
     ArrayList <Order> orderList = new ArrayList<>()
 
      boolean saveOrder (Order order)
@@ -120,6 +136,7 @@ REPOSITORY
 
 SERVICE
 1. UserService
+   
    UserRepository obj
 
     String register (User user)
@@ -132,6 +149,7 @@ SERVICE
   //It will give the profile of the user
 
 2. RestaurantService
+   
    RestaurantRepository obj
 
     String createRestaurant (Restaurant restaurant)
@@ -147,6 +165,7 @@ SERVICE
   //It will give the details of the restaurant by the ownerId
 
 3. FoodItemService
+   
    FoodItemRepository obj
 
      String addFoodItem (String restaurantId , FoodItems foodItems)
@@ -162,6 +181,7 @@ SERVICE
    //It will the full details of the fooditems by the restaurant
 
 4. OrderService
+   
    OrederRepository obj
 
       String  placeOrder (Order order)
