@@ -4,14 +4,14 @@ import Models.User;
 import Services.Impl.UserServiceImpl;
 
 public class UserController {
-    UserServiceImpl userService = new UserServiceImpl();
-    String register (User user){
+    public static UserServiceImpl userService = new UserServiceImpl();
+    public static boolean register (User user){
         return userService.register(user);
     }
-    String logIn (String userName, String password){
+    public static boolean logIn (String userName, String password){
         return userService.logIn(userName, password);
     }
-    User getUserProfile(String userId){
+    public User getUserProfile(String userId){
         return userService.getUserProfile(userId);
     }
 }

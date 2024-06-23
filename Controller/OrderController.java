@@ -4,17 +4,17 @@ import Models.Order;
 import Services.Impl.OrderServiceImpl;
 
 public class OrderController {
-    OrderServiceImpl orderService = new OrderServiceImpl();
-    String  placeOrder (Order order){
+    static OrderServiceImpl orderService = new OrderServiceImpl();
+    public static String  placeOrder (Order order){
         return orderService.placeOrder(order);
     }
-    Order getOrderByCustomerId (String customerId){
+    public static Order getOrderByCustomerId (String customerId){
         return orderService.getOrderByCustomerId(customerId);
     }
-    Order getOrderByRestaurantId (String restaurantId){
+    public static Order getOrderByRestaurantId (String restaurantId){
         return orderService.getOrderByRestaurantId(restaurantId);
     }
-    Order updateOrderStatus (String orderId,String status){
+    public static Order updateOrderStatus (String orderId,String status){
         return orderService.updateOrderStatus(orderId, status);
     }
 }
